@@ -104,7 +104,7 @@ class SyncRequestResponse(IncomingMessageHandler):
         self.lock.acquire()
         try:
             self._cid += 1;
-            return struct.pack("L", self._cid)
+            return str(self._cid)
         finally:
             self.lock.release()
 
